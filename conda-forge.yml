@@ -12,10 +12,13 @@ build_platform:
 azure:
   settings_linux:
     swapfile_size: 10GiB
-  store_build_artifacts: true
   # free up some extra space on the default Azure Pipelines
   # linux image before running the Docker container for building
   free_disk_space: true
 test: native_and_emulated
 bot:
   automerge: true
+workflow_settings:
+  store_build_artifacts:
+    - provider: azure
+      value: true
